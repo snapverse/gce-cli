@@ -21,7 +21,7 @@ class Cli {
 		setInterval(() => {
 			this.update(ticks);
 			ticks++;
-		}, 1000 / 15); // fps
+		}, 1000 / 10); // fps
 	}
 
 	public render() {
