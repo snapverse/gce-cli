@@ -1,0 +1,42 @@
+{
+  "name": "@snapverse/gce-cli",
+  "version": "0.1.0",
+  "description": "A powerful framework to build Chrome Extensions effortlessly using TypeScript.",
+  "keywords": [
+    "gce",
+    "cli",
+    "google",
+    "chrome",
+    "extension",
+    "framework",
+    "typescript"
+  ],
+  "author": "Simón Villafañe <simonvillafanee3@gmail.com>",
+  "license": "GNU GPLv3",
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "start": "pnpm check && tsx src/main.ts",
+    "watch": "tsx watch src/main.ts",
+    "check": "tsc --noEmit",
+    "fix": "pnpm lint:fix & pnpm prettier",
+    "lint": "eslint src -c eslint.config.ts",
+    "lint:fix": "eslint src -c eslint.config.ts --fix",
+    "prettier": "prettier --write src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
+    "jiti": "^2.4.2",
+    "prettier": "3.4.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "latest",
+    "typescript-eslint": "^8.20.0"
+  }
+}
