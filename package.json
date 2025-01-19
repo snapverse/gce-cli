@@ -13,11 +13,11 @@
   ],
   "author": "Simón Villafañe <simonvillafanee3@gmail.com>",
   "license": "GNU GPLv3",
-  "main": "src/main.ts",
+  "main": "main.ts",
   "type": "module",
   "scripts": {
-    "start": "pnpm check && tsx src/main.ts",
-    "watch": "tsx watch src/main.ts",
+    "start": "pnpm check && tsx main.ts",
+    "watch": "tsx watch main.ts",
     "check": "tsc --noEmit",
     "fix": "pnpm lint:fix & pnpm prettier",
     "lint": "eslint src -c eslint.config.ts",
@@ -30,13 +30,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.7",
     "eslint": "^9.18.0",
     "globals": "^15.14.0",
     "jiti": "^2.4.2",
     "prettier": "3.4.2",
-    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.2",
     "typescript": "latest",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "yaml": "^2.7.0"
   }
 }

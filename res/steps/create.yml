@@ -1,0 +1,59 @@
+- key: template 
+  title: 🗂️ With which template do you want to start?
+  options:
+    - HelloWorld
+    - Blank
+
+- key: runtime
+  title: 🏃‍♂️‍➡️ What's is your runtime of choice?
+  options:
+    - Node
+    - Deno
+    - Bun
+
+- key: language
+  title: 💬 Which language do you want to use?
+  options:
+    - TypeScript
+    - JavaScript
+
+- key: package_manager
+  title: 📦 Which package manager do you want to use?
+  options:
+    - pnpm
+    - yarn
+    - npm
+
+- key: bundler
+  title: 🎁 Which bundler do you want to use?
+  options:
+    - legacy
+    - esbuild
+
+- key: transpiler
+  title: ⚡️ Which TypeScript transpiler do you want to use?
+  depends: 
+    key: language
+    value: TypeScript
+  options:
+    - tsc
+    - swc
+    - babel
+
+- key: use_linter
+  title: ⚠️ Do you want to use a linter?
+  options:
+    - "Yes"
+    - "No"
+
+- key: use_formatter
+  title: 💅 Do you want to use a formatter?
+  options:
+    - "Yes"
+    - "No"
+  
+- key: git
+  title: 🌳 Do you want to initialize a git repository?
+  options:
+    - "Yes"
+    - "No"

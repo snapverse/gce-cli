@@ -1,33 +1,27 @@
 import chalk from 'chalk';
-import LOADING_SPRITE from '../assets/textures/loading.json' assert { type: 'json' };
+import rlp from 'readline';
 
-class Cli {
-	public static run() {
-		new Cli().render();
+const Console = console;
+
+const cli = {
+	...console,
+	purple: chalk.hex('#cc9af7'),
+	log: (...args: string[]) => {
+		Console.log(' ', ...args, ' ');
+	},
+	clear: Console.clear,
+	exit: (code: number = 0): void => process.exit(code),
+	on: (_event: 'keypress', callback: (key: Buffer) => void) => {
+		const rl = rlp.createInterface({
+			input: process.stdin,
+			output: process.stdout,
+		});
+
+		process.stdin.setRawMode(true);
+		process.stdin.resume();
+		process.stdin.on('data', callback);
+		return rl;
 	}
+};
 
-	private update(tick: number) {
-		console.clear();
-
-		const spriteIndex = (tick + 1) % LOADING_SPRITE.length;
-		const pink = chalk.hex('#E27BB1');
-		console.log(
-			`${LOADING_SPRITE[spriteIndex]} Please wait, we are 🍳 something ${pink('very sweet...')}`,
-		);
-	}
-
-	private loop() {
-		let ticks = 0;
-		setInterval(() => {
-			this.update(ticks);
-			ticks++;
-		}, 1000 / 10); // fps
-	}
-
-	public render() {
-		console.clear();
-		this.loop();
-	}
-}
-
-export default Cli;
+export default cli;

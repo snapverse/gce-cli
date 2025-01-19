@@ -10,7 +10,11 @@
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "./dist"
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@res/*": ["res/*"]
+    }
   },
   "include": ["**/*.ts", "**/*.d.ts"],
   "exclude": ["node_modules", "assets"]
